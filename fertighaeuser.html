@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fertighäuser Danwood — Exklusiv Bauen</title>
+<meta name="description" content="Schlüsselfertige Fertighäuser in Holzständerbauweise. Danwood-Partner in Berlin-Brandenburg. KfW40+, QNG, individuelle Planung, Festpreis." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --gold-900: #8B6B2E;
+  --gold-700: #B8924A;
+  --gold-500: #C9A961;
+  --gold-300: #D4B574;
+  --gold-100: #EFE5D0;
+  --gold-50:  #F7F1E2;
+  --cream: #FAF7F2;
+  --cream-2: #F4EFE5;
+  --paper: #FFFFFF;
+  --ink-900: #14110D;
+  --ink-800: #1F1B14;
+  --ink-700: #3C372E;
+  --ink-500: #6B6660;
+  --ink-400: #8E8A82;
+  --ink-300: #B8B3AB;
+  --line: #E6DFD2;
+  --line-soft: #EFE9DC;
+  --line-dark: rgba(255,255,255,.12);
+  --shadow-sm: 0 1px 2px rgba(20,17,13,.06);
+  --shadow-md: 0 8px 32px -8px rgba(20,17,13,.22), 0 2px 6px rgba(20,17,13,.08);
+  --shadow-lg: 0 32px 80px -24px rgba(20,17,13,.35), 0 6px 16px rgba(20,17,13,.10);
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "Manrope", -apple-system, sans-serif;
+  --ease-out: cubic-bezier(.22,.61,.36,1);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--sans); background: var(--cream); color: var(--ink-700); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+
+#scrollProgress { position: fixed; top: 0; left: 0; height: 2px; width: 0%; background: linear-gradient(90deg, var(--gold-900), var(--gold-500), var(--gold-300)); z-index: 9999; }
+
+/* NAV */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 24px 40px; display: flex; align-items: center; justify-content: space-between; transition: padding .4s, background .4s, backdrop-filter .4s; }
+.nav.scrolled { padding: 14px 40px; background: rgba(20,17,13,.88); backdrop-filter: blur(16px) saturate(1.4); border-bottom: 1px solid var(--line-dark); }
+.nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
+.nav-logo { height: 36px; width: auto; filter: brightness(0) invert(1); }
+.nav-wordmark { display: flex; flex-direction: column; gap: 1px; }
+.nav-wordmark-main { font-family: var(--serif); font-size: 20px; font-weight: 500; color: #fff; line-height: 1; }
+.nav-wordmark-sub { font-family: var(--sans); font-size: 9px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--gold-500); }
+.nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+.nav-link { font-family: var(--sans); font-size: 13px; font-weight: 500; letter-spacing: .04em; color: rgba(255,255,255,.78); text-decoration: none; position: relative; padding-bottom: 3px; transition: color .25s; }
+.nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 1px; background: var(--gold-500); transform: scaleX(0); transform-origin: left; transition: transform .35s; }
+.nav-link:hover, .nav-link.active { color: #fff; }
+.nav-link:hover::after, .nav-link.active::after { transform: scaleX(1); }
+.nav-cta { display: flex; align-items: center; gap: 8px; padding: 10px 22px; border: 1px solid var(--gold-700); color: var(--gold-300); font-family: var(--sans); font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; transition: background .25s, color .25s; flex-shrink: 0; }
+.nav-cta:hover { background: var(--gold-700); color: var(--ink-900); }
+.nav-cta-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold-500); animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(.7)} }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+.nav-hamburger span { display: block; width: 24px; height: 2px; background: #fff; transition: transform .3s, opacity .3s; }
+.nav-hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.nav-hamburger.active span:nth-child(2){opacity:0}
+.nav-hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.nav-mobile { display: none; position: fixed; inset: 0; background: var(--ink-900); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 40px; }
+.nav-mobile.open { display: flex; }
+.nav-mobile a { font-family: var(--serif); font-size: 36px; font-weight: 300; color: rgba(255,255,255,.8); text-decoration: none; transition: color .2s; }
+.nav-mobile a:hover { color: var(--gold-500); }
+
+/* PAGE HERO */
+.page-hero { position: relative; height: 80vh; min-height: 600px; display: flex; align-items: flex-end; overflow: hidden; background: var(--ink-900); }
+.page-hero-bg { position: absolute; inset: -8% 0; background-size: cover; background-position: center; transform: scale(1.06); }
+.page-hero-vignette { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(20,17,13,.15) 0%, rgba(20,17,13,.5) 55%, rgba(20,17,13,.92) 100%); }
+.page-hero-content { position: relative; z-index: 2; padding: 0 40px 80px; max-width: 900px; }
+.page-hero-eyebrow { font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--gold-700); margin-bottom: 20px; display: flex; align-items: center; gap: 12px; }
+.page-hero-eyebrow::before { content: ''; display: block; width: 40px; height: 1px; background: var(--gold-700); }
+.page-hero-h1 { font-family: var(--serif); font-size: clamp(48px, 6vw, 88px); font-weight: 300; line-height: 1.05; color: #fff; margin-bottom: 24px; }
+.page-hero-h1 em { font-style: italic; color: var(--gold-500); }
+.page-hero-lead { font-family: var(--sans); font-size: 16px; line-height: 1.75; color: rgba(255,255,255,.65); max-width: 560px; }
+
+/* SECTIONS */
+.section-wrap { padding: 100px 40px; max-width: 1280px; margin: 0 auto; }
+.section-eyebrow { font-family: var(--sans); font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--gold-700); margin-bottom: 16px; }
+.section-h2 { font-family: var(--serif); font-size: clamp(34px, 2.8vw, 50px); font-weight: 300; line-height: 1.15; color: var(--ink-900); margin-bottom: 20px; }
+.section-h2 em { font-style: italic; color: var(--gold-700); }
+.section-h2-white { color: #fff; }
+.section-lead { font-family: var(--sans); font-size: 15px; line-height: 1.8; color: var(--ink-500); max-width: 640px; }
+
+/* MODELS GRID */
+.models-section { background: var(--cream-2); padding: 100px 40px; }
+.models-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--line); max-width: 1280px; margin: 64px auto 0; }
+.model-card { background: var(--paper); overflow: hidden; transition: box-shadow .3s; }
+.model-card:hover { box-shadow: var(--shadow-lg); }
+.model-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; transition: transform .6s; }
+.model-card:hover .model-img { transform: scale(1.04); }
+.model-body { padding: 32px; }
+.model-tag { display: inline-block; padding: 4px 12px; border: 1px solid var(--gold-700); font-family: var(--sans); font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-700); margin-bottom: 12px; }
+.model-name { font-family: var(--serif); font-size: 28px; font-weight: 400; color: var(--ink-900); margin-bottom: 8px; }
+.model-size { font-family: var(--serif); font-size: 15px; font-style: italic; color: var(--gold-700); margin-bottom: 16px; }
+.model-specs { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
+.model-spec { display: flex; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid var(--line-soft); font-family: var(--sans); font-size: 13px; }
+.model-spec-label { color: var(--ink-400); }
+.model-spec-value { color: var(--ink-800); font-weight: 500; }
+.model-price { font-family: var(--serif); font-size: 22px; font-weight: 500; color: var(--gold-700); }
+
+/* SPLIT SECTION */
+.split-section { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+.split-img { width: 100%; height: 100%; min-height: 500px; object-fit: cover; display: block; }
+.split-content { padding: 80px 72px; display: flex; flex-direction: column; justify-content: center; }
+.split-content.dark { background: var(--ink-900); }
+.split-content.light { background: var(--cream); }
+
+/* GALLERY */
+.gallery-section { background: var(--ink-900); padding: 100px 40px; }
+.gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: auto auto; gap: 4px; max-width: 1280px; margin: 48px auto 0; }
+.gallery-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; transition: transform .5s; overflow: hidden; }
+.gallery-img:hover { transform: scale(1.02); }
+.gallery-img:first-child { grid-column: span 2; aspect-ratio: 16/9; }
+
+/* PROCESS MINI */
+.process-mini { background: var(--cream); padding: 80px 40px; }
+.process-mini-inner { max-width: 1280px; margin: 0 auto; }
+.process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--line); margin-top: 48px; }
+.process-step { background: var(--paper); padding: 32px 24px; }
+.process-step-num { font-family: var(--serif); font-size: 48px; font-style: italic; font-weight: 300; color: var(--gold-300); line-height: 1; margin-bottom: 16px; }
+.process-step-title { font-family: var(--serif); font-size: 20px; font-weight: 500; color: var(--ink-900); margin-bottom: 8px; }
+.process-step-text { font-family: var(--sans); font-size: 13px; line-height: 1.7; color: var(--ink-500); }
+
+/* BUTTONS */
+.btn-gold { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; background: var(--gold-700); color: var(--ink-900); font-family: var(--sans); font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; transition: background .25s, transform .2s; }
+.btn-gold:hover { background: var(--gold-500); transform: translateY(-1px); }
+.btn-ghost-dark { display: inline-flex; align-items: center; gap: 8px; padding: 13px 32px; border: 1px solid rgba(255,255,255,.25); color: rgba(255,255,255,.8); font-family: var(--sans); font-size: 13px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; transition: border-color .25s, color .25s; }
+.btn-ghost-dark:hover { border-color: var(--gold-500); color: var(--gold-300); }
+
+/* CTA BAND */
+.cta-band { background: var(--ink-900); padding: 100px 40px; text-align: center; position: relative; overflow: hidden; }
+.cta-band::before { content: 'EXKLUSIV'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family: var(--serif); font-size: 200px; font-weight: 600; font-style: italic; color: rgba(255,255,255,.02); pointer-events: none; white-space: nowrap; }
+.cta-band h2 { font-family: var(--serif); font-size: clamp(36px, 3vw, 52px); font-weight: 300; color: #fff; margin-bottom: 16px; }
+.cta-band h2 em { color: var(--gold-500); font-style: italic; }
+.cta-band p { font-family: var(--sans); font-size: 15px; color: rgba(255,255,255,.55); margin-bottom: 40px; max-width: 540px; margin-left: auto; margin-right: auto; }
+.cta-btns { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+/* FOOTER */
+.footer { background: var(--ink-900); padding: 80px 40px 40px; border-top: 1px solid rgba(255,255,255,.06); }
+.footer-inner { max-width: 1280px; margin: 0 auto; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 2fr; gap: 60px; padding-bottom: 60px; border-bottom: 1px solid rgba(255,255,255,.06); margin-bottom: 40px; }
+.footer-logo { height: 32px; filter: brightness(0) invert(1); opacity: .7; margin-bottom: 16px; }
+.footer-tagline { font-family: var(--serif); font-size: 16px; font-style: italic; color: rgba(255,255,255,.45); line-height: 1.6; margin-bottom: 28px; }
+.footer-socials { display: flex; gap: 12px; }
+.footer-social { width: 36px; height: 36px; border: 1px solid rgba(255,255,255,.12); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.4); text-decoration: none; transition: border-color .2s, color .2s; }
+.footer-social:hover { border-color: var(--gold-700); color: var(--gold-500); }
+.footer-col-title { font-family: var(--sans); font-size: 10px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 20px; }
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-links a { font-family: var(--sans); font-size: 14px; color: rgba(255,255,255,.55); text-decoration: none; transition: color .2s; }
+.footer-links a:hover { color: var(--gold-300); }
+.footer-address { font-family: var(--sans); font-size: 13px; line-height: 1.9; color: rgba(255,255,255,.45); }
+.footer-address strong { display: block; color: rgba(255,255,255,.7); font-weight: 600; margin-bottom: 4px; }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+.footer-copy { font-family: var(--sans); font-size: 12px; color: rgba(255,255,255,.28); }
+.footer-legal { display: flex; gap: 24px; }
+.footer-legal a { font-family: var(--sans); font-size: 12px; color: rgba(255,255,255,.28); text-decoration: none; transition: color .2s; }
+.footer-legal a:hover { color: rgba(255,255,255,.6); }
+
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(32px); transition: opacity .8s var(--ease-out), transform .8s var(--ease-out); }
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-img { opacity: 0; transform: scale(.97); transition: opacity 1.1s var(--ease-out), transform 1.1s var(--ease-out); }
+.reveal-img.visible { opacity: 1; transform: scale(1); }
+.reveal-delay-1 { transition-delay: .1s; }
+.reveal-delay-2 { transition-delay: .2s; }
+.reveal-delay-3 { transition-delay: .3s; }
+
+/* SCROLL TOP */
+.scroll-top { position: fixed; bottom: 40px; right: 40px; width: 48px; height: 48px; background: var(--ink-800); border: 1px solid var(--gold-900); color: var(--gold-500); display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; pointer-events: none; transition: opacity .3s, background .2s; z-index: 800; }
+.scroll-top.visible { opacity: 1; pointer-events: auto; }
+.scroll-top:hover { background: var(--gold-900); }
+
+@media (max-width: 1024px) {
+  .models-grid { grid-template-columns: 1fr 1fr; }
+  .split-section { grid-template-columns: 1fr; }
+  .split-img { min-height: 300px; height: 60vw; }
+  .split-content { padding: 56px 32px; }
+  .process-steps { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .gallery-img:first-child { grid-column: span 2; }
+}
+@media (max-width: 768px) {
+  .nav { padding: 18px 20px; }
+  .nav.scrolled { padding: 12px 20px; }
+  .nav-links, .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+  .page-hero-content { padding: 0 20px 60px; }
+  .models-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-img:first-child { grid-column: span 1; aspect-ratio: 4/3; }
+  .process-steps { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .footer { padding: 60px 20px 32px; }
+  .section-wrap, .models-section, .gallery-section, .process-mini, .cta-band { padding: 72px 20px; }
+}
+</style>
+</head>
+<body>
+<div id="scrollProgress"></div>
+
+<nav class="nav" id="mainNav">
+  <a href="index.html" class="nav-brand">
+    <img src="images/logo.png" alt="Exklusiv Bauen" class="nav-logo" />
+    <div class="nav-wordmark">
+      <span class="nav-wordmark-main">Exklusiv Bauen</span>
+      <span class="nav-wordmark-sub">By Merando Marketing</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="fertighaeuser.html" class="nav-link active">Fertighäuser</a></li>
+    <li><a href="gewerbe.html" class="nav-link">Gewerbe & Anlage</a></li>
+    <li><a href="tiny-houses.html" class="nav-link">Tiny Houses</a></li>
+    <li><a href="qng.html" class="nav-link">QNG & Förderung</a></li>
+    <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+  </ul>
+  <a href="kontakt.html" class="nav-cta"><span class="nav-cta-dot"></span>Beratung anfragen</a>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menü öffnen">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-mobile" id="mobileNav">
+  <a href="index.html">Startseite</a>
+  <a href="fertighaeuser.html">Fertighäuser</a>
+  <a href="gewerbe.html">Gewerbe & Anlage</a>
+  <a href="tiny-houses.html">Tiny Houses</a>
+  <a href="qng.html">QNG & Förderung</a>
+  <a href="kontakt.html">Kontakt</a>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=2400&q=85');"></div>
+  <div class="page-hero-vignette"></div>
+  <div class="page-hero-content">
+    <p class="page-hero-eyebrow">Eigenheime · Berlin-Brandenburg</p>
+    <h1 class="page-hero-h1">Fertighäuser · <em>Danwood</em></h1>
+    <p class="page-hero-lead">Schlüsselfertige Holzhäuser mit maximaler Individualisierung — vom Erstgespräch bis zur Schlüsselübergabe aus einer Hand. Ab 1.600 € / m², KfW-40-Plus-Standard.</p>
+  </div>
+</section>
+
+<!-- INTRO -->
+<div class="section-wrap">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;" class="reveal">
+    <div>
+      <p class="section-eyebrow">Danwood · Partnerschaft</p>
+      <h2 class="section-h2">Bewährte Bauweise, <em>zeitlose Architektur.</em></h2>
+      <p class="section-lead" style="margin-bottom:32px;">Seit mehr als 25 Jahren verbindet Exklusiv Bauen die zuverlässige Qualität von Danwood-Fertighäusern mit individualisierten Planungskonzepten für den Berliner und Brandenburger Markt. Das Ergebnis: Häuser, die halten — und begeistern.</p>
+      <p class="section-lead">Die Holzständerbauweise erlaubt eine Wandstärke von 34,5 cm bei herausragendem U-Wert von 0,12 W/m²K. Gegenüber Massivbau gewinnen Sie 8–12% Nettofläche bei identischem Grundriss.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line);">
+      <div style="background:var(--paper);padding:32px 24px;"><p style="font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-400);margin-bottom:8px;">Wandstärke</p><p style="font-family:var(--serif);font-size:22px;color:var(--ink-900);">34,5 cm</p></div>
+      <div style="background:var(--paper);padding:32px 24px;"><p style="font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-400);margin-bottom:8px;">U-Wert</p><p style="font-family:var(--serif);font-size:22px;color:var(--gold-700);">0,12 W/m²K</p></div>
+      <div style="background:var(--paper);padding:32px 24px;"><p style="font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-400);margin-bottom:8px;">Bauzeit</p><p style="font-family:var(--serif);font-size:22px;color:var(--ink-900);">4–6 Monate</p></div>
+      <div style="background:var(--paper);padding:32px 24px;"><p style="font-family:var(--sans);font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-400);margin-bottom:8px;">Garantie</p><p style="font-family:var(--serif);font-size:22px;color:var(--gold-700);">30 Jahre</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- MODELS -->
+<section class="models-section">
+  <div style="max-width:1280px;margin:0 auto;">
+    <p class="section-eyebrow reveal">Hausmodelle</p>
+    <h2 class="section-h2 reveal reveal-delay-1">Drei Linien. <em>Unendliche Möglichkeiten.</em></h2>
+    <p class="section-lead reveal reveal-delay-2">Wählen Sie Ihr Basismodell und konfigurieren Sie es nach Ihren Vorstellungen. Jedes Modell ist in seiner Größe, Fassade und Innenraumaufteilung frei gestaltbar.</p>
+    <div class="models-grid">
+      <div class="model-card reveal">
+        <div style="overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=85" alt="Linie Klassik" class="model-img" loading="lazy" />
+        </div>
+        <div class="model-body">
+          <span class="model-tag">Einsteiger</span>
+          <h3 class="model-name">Linie Klassik</h3>
+          <p class="model-size">110–150 m² Wohnfläche</p>
+          <ul class="model-specs">
+            <li class="model-spec"><span class="model-spec-label">Bauweise</span><span class="model-spec-value">Holzständer KfW40+</span></li>
+            <li class="model-spec"><span class="model-spec-label">Schlafzimmer</span><span class="model-spec-value">3–4</span></li>
+            <li class="model-spec"><span class="model-spec-label">Energiestandard</span><span class="model-spec-value">A+ / KfW40</span></li>
+            <li class="model-spec"><span class="model-spec-label">Förderung</span><span class="model-spec-value">bis 100.000 € KfW</span></li>
+          </ul>
+          <p class="model-price">ab 1.600 € / m²</p>
+        </div>
+      </div>
+      <div class="model-card reveal reveal-delay-1">
+        <div style="overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900&q=85" alt="Linie Prestige" class="model-img" loading="lazy" />
+        </div>
+        <div class="model-body">
+          <span class="model-tag">Beliebt</span>
+          <h3 class="model-name">Linie Prestige</h3>
+          <p class="model-size">160–220 m² Wohnfläche</p>
+          <ul class="model-specs">
+            <li class="model-spec"><span class="model-spec-label">Bauweise</span><span class="model-spec-value">Holz-Hybrid KfW40+</span></li>
+            <li class="model-spec"><span class="model-spec-label">Schlafzimmer</span><span class="model-spec-value">4–5</span></li>
+            <li class="model-spec"><span class="model-spec-label">Energiestandard</span><span class="model-spec-value">A++ / KfW40+</span></li>
+            <li class="model-spec"><span class="model-spec-label">Förderung</span><span class="model-spec-value">bis 150.000 € KfW</span></li>
+          </ul>
+          <p class="model-price">ab 1.750 € / m²</p>
+        </div>
+      </div>
+      <div class="model-card reveal reveal-delay-2">
+        <div style="overflow:hidden;">
+          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&q=85" alt="Linie Exklusiv" class="model-img" loading="lazy" />
+        </div>
+        <div class="model-body">
+          <span class="model-tag">Premium</span>
+          <h3 class="model-name">Linie Exklusiv</h3>
+          <p class="model-size">220–380 m² Wohnfläche</p>
+          <ul class="model-specs">
+            <li class="model-spec"><span class="model-spec-label">Bauweise</span><span class="model-spec-value">Massivholz-Hybrid QNG</span></li>
+            <li class="model-spec"><span class="model-spec-label">Schlafzimmer</span><span class="model-spec-value">5+</span></li>
+            <li class="model-spec"><span class="model-spec-label">Energiestandard</span><span class="model-spec-value">A++ / KfW40+ QNG</span></li>
+            <li class="model-spec"><span class="model-spec-label">Förderung</span><span class="model-spec-value">bis 150.000 € KfW</span></li>
+          </ul>
+          <p class="model-price">ab 1.950 € / m²</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DANWOOD PARTNERSHIP -->
+<div class="split-section">
+  <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=85" alt="Danwood Holzbau" class="split-img reveal-img" loading="lazy" />
+  <div class="split-content light" style="padding:80px 72px;">
+    <p class="section-eyebrow reveal">Unsere Partnerschaft</p>
+    <h2 class="section-h2 reveal reveal-delay-1">Danwood — <em>Europas führender</em> Holzhausbauer.</h2>
+    <p class="section-lead reveal reveal-delay-2" style="margin-bottom:24px;">Danwood gehört zu den innovativsten Herstellern von Fertighäusern in Europa. Die Produktion erfolgt vollständig CNC-gesteuert in modernen Werkshallen — mit präziser Qualitätssicherung auf jedem Meter.</p>
+    <p class="section-lead reveal reveal-delay-2" style="margin-bottom:40px;">Als zertifizierter Danwood-Partner in Berlin-Brandenburg verbinden wir diese Produktionsexzellenz mit tiefer regionaler Marktkenntnis: Genehmigungswege, Grundstückssituation, Fördertöpfe — alles aus einer Hand.</p>
+    <a href="kontakt.html" class="btn-gold reveal reveal-delay-3">Beratungstermin vereinbaren</a>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section class="gallery-section">
+  <div style="max-width:1280px;margin:0 auto;">
+    <p class="section-eyebrow reveal" style="color:var(--gold-700);">Galerie</p>
+    <h2 class="section-h2 reveal reveal-delay-1 section-h2-white">Einblicke in <em>unsere Projekte.</em></h2>
+    <div class="gallery-grid">
+      <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?w=1200&q=85" alt="Fertighaus Projekt 1" class="gallery-img reveal-img" loading="lazy" />
+      <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&q=85" alt="Fertighaus Innenraum" class="gallery-img reveal-img" loading="lazy" />
+      <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600&q=85" alt="Holzbau Qualität" class="gallery-img reveal-img" loading="lazy" />
+      <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&q=85" alt="Wohnzimmer Holzhaus" class="gallery-img reveal-img" loading="lazy" />
+      <img src="https://images.unsplash.com/photo-1556909211-36987daf7b4d?w=600&q=85" alt="Küche Fertighaus" class="gallery-img reveal-img" loading="lazy" />
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=85" alt="Außenansicht" class="gallery-img reveal-img" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-mini">
+  <div class="process-mini-inner">
+    <p class="section-eyebrow reveal">Ihr Weg</p>
+    <h2 class="section-h2 reveal reveal-delay-1">Vom Gespräch zum <em>Traumhaus.</em></h2>
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <p class="process-step-num">01</p>
+        <h3 class="process-step-title">Beratung & Planung</h3>
+        <p class="process-step-text">Wir analysieren Ihren Bedarf, prüfen Ihr Grundstück und erstellen ein erstes Konzept — kostenlos und unverbindlich.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-1">
+        <p class="process-step-num">02</p>
+        <h3 class="process-step-title">Finanzierung & Förderung</h3>
+        <p class="process-step-text">Unsere Förderexperten sichern Ihnen den optimalen KfW-Kredit und alle verfügbaren Zuschüsse — bis zu 150.000 €.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-2">
+        <p class="process-step-num">03</p>
+        <h3 class="process-step-title">Produktion & Aufbau</h3>
+        <p class="process-step-text">Ihr Haus wird CNC-präzise im Danwood-Werk gefertigt. Der Aufbau vor Ort erfolgt in wenigen Wochen.</p>
+      </div>
+      <div class="process-step reveal reveal-delay-3">
+        <p class="process-step-num">04</p>
+        <h3 class="process-step-title">Übergabe & Einzug</h3>
+        <p class="process-step-text">Schlüsselfertig, inklusive QNG-Zertifikat, Genehmigungsunterlagen und 30 Jahren Garantie auf die Gebäudehülle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <h2 class="reveal">Ihr Haus. <em>Ihr Festpreis.</em></h2>
+  <p class="reveal reveal-delay-1">Starten Sie jetzt Ihre kostenlose Konfiguration oder buchen Sie direkt einen Beratungstermin — in Berlin oder Brandenburg.</p>
+  <div class="cta-btns reveal reveal-delay-2">
+    <a href="kontakt.html" class="btn-gold">Beratung anfragen</a>
+    <a href="qng.html" class="btn-ghost-dark">KfW-Förderung prüfen</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <img src="images/logo.png" alt="Exklusiv Bauen" class="footer-logo" />
+        <p class="footer-tagline">Holz, das bleibt.<br/>Architektur, die wirkt.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" class="footer-social" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M8 11v5M8 8v.01M12 16v-5M12 11c0-1 1-2 3-2s3 1 3 2v5"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <p class="footer-col-title">Leistungen</p>
+        <ul class="footer-links">
+          <li><a href="fertighaeuser.html">Fertighäuser</a></li>
+          <li><a href="gewerbe.html">Gewerbe & Anlage</a></li>
+          <li><a href="tiny-houses.html">Tiny Houses</a></li>
+          <li><a href="qng.html">QNG & Förderung</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Unternehmen</p>
+        <ul class="footer-links">
+          <li><a href="index.html#about">Über uns</a></li>
+          <li><a href="index.html#team">Team</a></li>
+          <li><a href="index.html#ablauf">Ablauf</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Kontakt</p>
+        <div class="footer-address">
+          <strong>Berlin</strong>Kurfürstendamm 194, 10707 Berlin<br/>+49 30 / 880 44 80<br/><br/>
+          <strong>Brandenburg</strong>Großbeerenstraße 12, 14482 Potsdam<br/>+49 331 / 270 35 00
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 Exklusiv Bauen by Merando Marketing GmbH.</p>
+      <div class="footer-legal"><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">AGB</a></div>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop" aria-label="Nach oben">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<script>
+const progressBar = document.getElementById('scrollProgress');
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  const p = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+  progressBar.style.width = (p * 100) + '%';
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+const scrollTopBtn = document.getElementById('scrollTop');
+window.addEventListener('scroll', () => scrollTopBtn.classList.toggle('visible', window.scrollY > 400), { passive: true });
+scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+hamburger.addEventListener('click', () => { hamburger.classList.toggle('active'); mobileNav.classList.toggle('open'); document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : ''; });
+mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { hamburger.classList.remove('active'); mobileNav.classList.remove('open'); document.body.style.overflow = ''; }));
+const reveals = document.querySelectorAll('.reveal, .reveal-img');
+const observer = new IntersectionObserver((entries) => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }), { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

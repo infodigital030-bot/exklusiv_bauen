@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>QNG-Zertifizierung & KfW-Förderung — Exklusiv Bauen</title>
+<meta name="description" content="QNG-Zertifizierung und KfW-Förderung für Ihren Neubau. KfW-Kredit bis 150.000€ ab 0,01%, Sonder-AfA 5% p.a., klimafreundlicher Neubau. Exklusiv Bauen erklärt alles." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{--gold-900:#8B6B2E;--gold-700:#B8924A;--gold-500:#C9A961;--gold-300:#D4B574;--gold-100:#EFE5D0;--cream:#FAF7F2;--cream-2:#F4EFE5;--paper:#FFFFFF;--ink-900:#14110D;--ink-800:#1F1B14;--ink-700:#3C372E;--ink-500:#6B6660;--ink-400:#8E8A82;--ink-300:#B8B3AB;--line:#E6DFD2;--line-soft:#EFE9DC;--line-dark:rgba(255,255,255,.12);--shadow-sm:0 1px 2px rgba(20,17,13,.06);--shadow-md:0 8px 32px -8px rgba(20,17,13,.22),0 2px 6px rgba(20,17,13,.08);--shadow-lg:0 32px 80px -24px rgba(20,17,13,.35),0 6px 16px rgba(20,17,13,.10);--serif:"Cormorant Garamond",Georgia,serif;--sans:"Manrope",-apple-system,sans-serif;--ease-out:cubic-bezier(.22,.61,.36,1);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);background:var(--ink-900);color:var(--ink-700);overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+#scrollProgress{position:fixed;top:0;left:0;height:2px;width:0%;background:linear-gradient(90deg,var(--gold-900),var(--gold-500),var(--gold-300));z-index:9999;}
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:24px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(20,17,13,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line-dark);transition:padding .4s;}
+.nav.scrolled{padding:14px 40px;}
+.nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0;}
+.nav-logo{height:36px;width:auto;filter:brightness(0) invert(1);}
+.nav-wordmark{display:flex;flex-direction:column;gap:1px;}
+.nav-wordmark-main{font-family:var(--serif);font-size:20px;font-weight:500;color:#fff;line-height:1;}
+.nav-wordmark-sub{font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-500);}
+.nav-links{display:flex;align-items:center;gap:36px;list-style:none;}
+.nav-link{font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:.04em;color:rgba(255,255,255,.78);text-decoration:none;position:relative;padding-bottom:3px;transition:color .25s;}
+.nav-link::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:1px;background:var(--gold-500);transform:scaleX(0);transform-origin:left;transition:transform .35s;}
+.nav-link:hover,.nav-link.active{color:#fff;}
+.nav-link:hover::after,.nav-link.active::after{transform:scaleX(1);}
+.nav-cta{display:flex;align-items:center;gap:8px;padding:10px 22px;border:1px solid var(--gold-700);color:var(--gold-300);font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transition:background .25s,color .25s;flex-shrink:0;}
+.nav-cta:hover{background:var(--gold-700);color:var(--ink-900);}
+.nav-cta-dot{width:6px;height:6px;border-radius:50%;background:var(--gold-500);animation:pulse 2s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.7)}}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
+.nav-hamburger span{display:block;width:24px;height:2px;background:#fff;transition:transform .3s,opacity .3s;}
+.nav-hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.nav-hamburger.active span:nth-child(2){opacity:0}
+.nav-hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.nav-mobile{display:none;position:fixed;inset:0;background:var(--ink-900);z-index:999;flex-direction:column;align-items:center;justify-content:center;gap:40px;}
+.nav-mobile.open{display:flex;}
+.nav-mobile a{font-family:var(--serif);font-size:36px;font-weight:300;color:rgba(255,255,255,.8);text-decoration:none;transition:color .2s;}
+.nav-mobile a:hover{color:var(--gold-500);}
+
+/* PAGE HERO DARK */
+.page-hero{padding:140px 40px 100px;background:var(--ink-900);position:relative;overflow:hidden;}
+.page-hero::before{content:'QNG';position:absolute;top:50%;right:-80px;transform:translateY(-50%);font-family:var(--serif);font-size:300px;font-weight:600;font-style:italic;color:rgba(255,255,255,.02);line-height:1;pointer-events:none;}
+.page-hero-inner{max-width:900px;}
+.page-hero-eyebrow{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-700);margin-bottom:20px;display:flex;align-items:center;gap:12px;}
+.page-hero-eyebrow::before{content:'';display:block;width:40px;height:1px;background:var(--gold-700);}
+.page-hero-h1{font-family:var(--serif);font-size:clamp(48px,6vw,88px);font-weight:300;line-height:1.05;color:#fff;margin-bottom:24px;}
+.page-hero-h1 em{font-style:italic;color:var(--gold-500);}
+.page-hero-lead{font-family:var(--sans);font-size:16px;line-height:1.75;color:rgba(255,255,255,.6);max-width:620px;margin-bottom:48px;}
+.hero-stats{display:flex;gap:48px;flex-wrap:wrap;}
+.hero-stat-val{font-family:var(--serif);font-size:48px;font-style:italic;color:var(--gold-500);line-height:1;margin-bottom:4px;}
+.hero-stat-label{font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);}
+
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .8s var(--ease-out),transform .8s var(--ease-out);}
+.reveal.visible{opacity:1;transform:none;}
+.reveal-img{opacity:0;transform:scale(.97);transition:opacity 1.1s var(--ease-out),transform 1.1s var(--ease-out);}
+.reveal-img.visible{opacity:1;transform:scale(1);}
+.reveal-delay-1{transition-delay:.1s;}.reveal-delay-2{transition-delay:.2s;}.reveal-delay-3{transition-delay:.3s;}
+
+.section-eyebrow{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-700);margin-bottom:16px;}
+.section-h2{font-family:var(--serif);font-size:clamp(34px,2.8vw,50px);font-weight:300;line-height:1.15;margin-bottom:20px;}
+.section-h2 em{font-style:italic;color:var(--gold-700);}
+.section-lead{font-family:var(--sans);font-size:15px;line-height:1.8;}
+
+/* WHAT IS QNG */
+.qng-explain{background:var(--ink-800);padding:100px 40px;}
+.qng-explain-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:5fr 6fr;gap:80px;align-items:center;}
+.qng-badges{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(255,255,255,.06);}
+.qng-badge{background:rgba(255,255,255,.03);padding:40px 32px;text-align:center;}
+.qng-badge-icon{font-family:var(--serif);font-size:52px;font-style:italic;color:var(--gold-500);line-height:1;margin-bottom:12px;}
+.qng-badge-title{font-family:var(--serif);font-size:18px;font-weight:500;color:#fff;margin-bottom:8px;}
+.qng-badge-text{font-family:var(--sans);font-size:12px;line-height:1.6;color:rgba(255,255,255,.45);}
+
+/* FOERDER CARDS */
+.foerder-section{background:var(--ink-900);padding:100px 40px;}
+.foerder-inner{max-width:1280px;margin:0 auto;}
+.foerder-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,.06);margin-top:64px;}
+.foerder-card{background:var(--ink-800);padding:48px 36px;position:relative;overflow:hidden;border-top:2px solid var(--gold-700);}
+.foerder-card-num{font-family:var(--serif);font-size:72px;font-style:italic;font-weight:300;color:var(--gold-500);line-height:1;margin-bottom:16px;}
+.foerder-card-title{font-family:var(--serif);font-size:24px;font-weight:400;color:#fff;margin-bottom:12px;}
+.foerder-card-text{font-family:var(--sans);font-size:13px;line-height:1.7;color:rgba(255,255,255,.5);margin-bottom:20px;}
+.foerder-card-detail{font-family:var(--serif);font-size:14px;color:var(--gold-300);font-style:italic;}
+
+/* KFW CARD FULL */
+.kfw-section{background:var(--ink-800);padding:100px 40px;}
+.kfw-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:6fr 5fr;gap:80px;align-items:center;}
+.kfw-card{background:rgba(255,255,255,.04);border:1px solid rgba(184,146,74,.3);padding:56px 48px;}
+.kfw-tag{display:inline-block;padding:5px 14px;background:var(--gold-700);font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-900);margin-bottom:24px;}
+.kfw-rate{font-family:var(--serif);font-size:clamp(60px,6vw,84px);font-weight:300;color:var(--gold-500);line-height:1;margin-bottom:8px;}
+.kfw-rate-label{font-family:var(--sans);font-size:13px;color:rgba(255,255,255,.5);margin-bottom:40px;}
+.kfw-list{list-style:none;display:flex;flex-direction:column;gap:16px;}
+.kfw-list li{display:flex;justify-content:space-between;align-items:center;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,.06);font-family:var(--sans);font-size:13px;}
+.kfw-list li:last-child{border-bottom:none;padding-bottom:0;}
+.kfw-list-label{color:rgba(255,255,255,.45);letter-spacing:.04em;}
+.kfw-list-value{color:rgba(255,255,255,.9);font-weight:500;}
+
+/* AFA RECHNER */
+.afa-section{background:var(--ink-900);padding:100px 40px;}
+.afa-inner{max-width:1280px;margin:0 auto;}
+.afa-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(255,255,255,.06);margin-top:64px;}
+.afa-sliders{background:var(--ink-800);padding:56px 48px;}
+.afa-result{background:rgba(184,146,74,.08);border:1px solid rgba(184,146,74,.2);padding:56px 48px;}
+.afa-slider-group{margin-bottom:40px;}
+.afa-slider-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;}
+.afa-slider-label{font-family:var(--sans);font-size:13px;font-weight:600;color:rgba(255,255,255,.7);letter-spacing:.04em;}
+.afa-slider-value{font-family:var(--serif);font-size:22px;font-weight:500;color:var(--gold-500);}
+.afa-slider{width:100%;-webkit-appearance:none;appearance:none;height:2px;background:rgba(255,255,255,.1);outline:none;cursor:pointer;}
+.afa-slider::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--gold-700);cursor:pointer;}
+.afa-slider::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--gold-700);cursor:pointer;border:none;}
+.afa-result-label{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:12px;}
+.afa-result-num{font-family:var(--serif);font-size:clamp(48px,5vw,72px);font-weight:300;color:var(--gold-500);line-height:1;margin-bottom:8px;}
+.afa-result-sub{font-family:var(--sans);font-size:13px;color:rgba(255,255,255,.4);margin-bottom:48px;}
+.afa-bars{display:flex;flex-direction:column;gap:12px;margin-bottom:32px;}
+.afa-bar-row{display:flex;align-items:center;gap:12px;}
+.afa-bar-label{font-family:var(--sans);font-size:11px;color:rgba(255,255,255,.45);width:40px;flex-shrink:0;}
+.afa-bar-track{flex:1;height:4px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden;}
+.afa-bar-fill{height:100%;background:linear-gradient(90deg,var(--gold-900),var(--gold-500));border-radius:2px;transition:width .6s var(--ease-out);}
+.afa-bar-amount{font-family:var(--serif);font-size:14px;color:var(--gold-300);width:80px;text-align:right;flex-shrink:0;}
+.afa-disclaimer{font-family:var(--sans);font-size:11px;line-height:1.6;color:rgba(255,255,255,.3);border-top:1px solid rgba(255,255,255,.06);padding-top:20px;}
+
+/* NACHHALTIGKEIT */
+.nach-section{background:var(--ink-800);padding:100px 40px;}
+.nach-inner{max-width:1280px;margin:0 auto;}
+.nach-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(255,255,255,.06);margin-top:64px;}
+.nach-stat{background:var(--ink-900);padding:48px 32px;text-align:center;}
+.nach-num{font-family:var(--serif);font-size:clamp(40px,4vw,60px);font-style:italic;color:var(--gold-500);line-height:1;margin-bottom:8px;}
+.nach-label{font-family:var(--sans);font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:8px;}
+.nach-sub{font-family:var(--sans);font-size:12px;line-height:1.6;color:rgba(255,255,255,.35);}
+
+.btn-gold{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:var(--gold-700);color:var(--ink-900);font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;transition:background .25s,transform .2s;}
+.btn-gold:hover{background:var(--gold-500);transform:translateY(-1px);}
+.btn-ghost-dark{display:inline-flex;align-items:center;gap:8px;padding:13px 32px;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.8);font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transition:border-color .25s,color .25s;}
+.btn-ghost-dark:hover{border-color:var(--gold-500);color:var(--gold-300);}
+
+.cta-band{background:var(--ink-900);padding:100px 40px;text-align:center;position:relative;overflow:hidden;border-top:1px solid rgba(255,255,255,.06);}
+.cta-band::before{content:'KfW';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--serif);font-size:200px;font-weight:600;font-style:italic;color:rgba(255,255,255,.02);pointer-events:none;white-space:nowrap;}
+.cta-band h2{font-family:var(--serif);font-size:clamp(36px,3vw,52px);font-weight:300;color:#fff;margin-bottom:16px;}
+.cta-band h2 em{color:var(--gold-500);font-style:italic;}
+.cta-band p{font-family:var(--sans);font-size:15px;color:rgba(255,255,255,.55);margin-bottom:40px;max-width:540px;margin-left:auto;margin-right:auto;}
+.cta-btns{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+.footer{background:var(--ink-900);padding:80px 40px 40px;border-top:1px solid rgba(255,255,255,.06);}
+.footer-inner{max-width:1280px;margin:0 auto;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 2fr;gap:60px;padding-bottom:60px;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:40px;}
+.footer-logo{height:32px;filter:brightness(0) invert(1);opacity:.7;margin-bottom:16px;}
+.footer-tagline{font-family:var(--serif);font-size:16px;font-style:italic;color:rgba(255,255,255,.45);line-height:1.6;margin-bottom:28px;}
+.footer-socials{display:flex;gap:12px;}
+.footer-social{width:36px;height:36px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);text-decoration:none;transition:border-color .2s,color .2s;}
+.footer-social:hover{border-color:var(--gold-700);color:var(--gold-500);}
+.footer-col-title{font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:20px;}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.footer-links a{font-family:var(--sans);font-size:14px;color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s;}
+.footer-links a:hover{color:var(--gold-300);}
+.footer-address{font-family:var(--sans);font-size:13px;line-height:1.9;color:rgba(255,255,255,.45);}
+.footer-address strong{display:block;color:rgba(255,255,255,.7);font-weight:600;margin-bottom:4px;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
+.footer-copy{font-family:var(--sans);font-size:12px;color:rgba(255,255,255,.28);}
+.footer-legal{display:flex;gap:24px;}
+.footer-legal a{font-family:var(--sans);font-size:12px;color:rgba(255,255,255,.28);text-decoration:none;transition:color .2s;}
+.footer-legal a:hover{color:rgba(255,255,255,.6);}
+.scroll-top{position:fixed;bottom:40px;right:40px;width:48px;height:48px;background:var(--ink-800);border:1px solid var(--gold-900);color:var(--gold-500);display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s,background .2s;z-index:800;}
+.scroll-top.visible{opacity:1;pointer-events:auto;}
+.scroll-top:hover{background:var(--gold-900);}
+@media(max-width:1024px){.qng-explain-inner{grid-template-columns:1fr;}.kfw-inner{grid-template-columns:1fr;}.afa-grid{grid-template-columns:1fr;}.nach-stats{grid-template-columns:1fr 1fr;}.foerder-grid{grid-template-columns:1fr 1fr;}.footer-grid{grid-template-columns:1fr 1fr;gap:40px;}}
+@media(max-width:768px){.nav{padding:18px 20px;}.nav.scrolled{padding:12px 20px;}.nav-links,.nav-cta{display:none;}.nav-hamburger{display:flex;}.page-hero{padding:100px 20px 72px;}.foerder-grid{grid-template-columns:1fr;}.nach-stats{grid-template-columns:1fr 1fr;}.afa-sliders,.afa-result{padding:36px 24px;}.footer-grid{grid-template-columns:1fr;gap:28px;}.footer{padding:60px 20px 32px;}.qng-explain,.foerder-section,.kfw-section,.afa-section,.nach-section,.cta-band{padding:72px 20px;}.kfw-card{padding:36px 24px;}.hero-stats{gap:28px;}}
+</style>
+</head>
+<body>
+<div id="scrollProgress"></div>
+<nav class="nav" id="mainNav">
+  <a href="index.html" class="nav-brand">
+    <img src="images/logo.png" alt="Exklusiv Bauen" class="nav-logo" />
+    <div class="nav-wordmark"><span class="nav-wordmark-main">Exklusiv Bauen</span><span class="nav-wordmark-sub">By Merando Marketing</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="fertighaeuser.html" class="nav-link">Fertighäuser</a></li>
+    <li><a href="gewerbe.html" class="nav-link">Gewerbe & Anlage</a></li>
+    <li><a href="tiny-houses.html" class="nav-link">Tiny Houses</a></li>
+    <li><a href="qng.html" class="nav-link active">QNG & Förderung</a></li>
+    <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+  </ul>
+  <a href="kontakt.html" class="nav-cta"><span class="nav-cta-dot"></span>Beratung anfragen</a>
+  <button class="nav-hamburger" id="hamburger" aria-label="Menü"><span></span><span></span><span></span></button>
+</nav>
+<div class="nav-mobile" id="mobileNav">
+  <a href="index.html">Startseite</a><a href="fertighaeuser.html">Fertighäuser</a><a href="gewerbe.html">Gewerbe & Anlage</a><a href="tiny-houses.html">Tiny Houses</a><a href="qng.html">QNG & Förderung</a><a href="kontakt.html">Kontakt</a>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-hero-eyebrow reveal">Zertifizierung & Förderung</p>
+    <h1 class="page-hero-h1 reveal reveal-delay-1">QNG-Zertifizierung & <em>KfW-Förderung</em></h1>
+    <p class="page-hero-lead reveal reveal-delay-2">Das Qualitätssiegel Nachhaltiges Gebäude öffnet die Tür zu den größten staatlichen Förderprogrammen. Wir integrieren die Zertifizierung von Anfang an — für Sie ohne Mehraufwand.</p>
+    <div class="hero-stats reveal reveal-delay-3">
+      <div><div class="hero-stat-val">0,01 %</div><div class="hero-stat-label">KfW eff. Jahreszins</div></div>
+      <div><div class="hero-stat-val">150 T€</div><div class="hero-stat-label">KfW-Kreditrahmen</div></div>
+      <div><div class="hero-stat-val">5 %</div><div class="hero-stat-label">Sonder-AfA p.a.</div></div>
+      <div><div class="hero-stat-val">30 J.</div><div class="hero-stat-label">Garantie Gebäude</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IS QNG -->
+<section class="qng-explain">
+  <div class="qng-explain-inner">
+    <div>
+      <p class="section-eyebrow reveal">Was ist QNG?</p>
+      <h2 class="section-h2 reveal reveal-delay-1" style="color:#fff;">Das Qualitätssiegel <em>Nachhaltiges Gebäude.</em></h2>
+      <p class="section-lead reveal reveal-delay-2" style="color:rgba(255,255,255,.6);margin-bottom:24px;">Das QNG ist ein staatliches Siegel des Bundesministeriums für Wohnen, das besonders nachhaltig errichtete Gebäude auszeichnet. Es bewertet ökologische, ökonomische und soziokulturelle Qualitäten — nicht nur den Energiestandard.</p>
+      <p class="section-lead reveal reveal-delay-2" style="color:rgba(255,255,255,.6);margin-bottom:40px;">Nur Gebäude mit QNG-Siegel haben Zugang zum KfW-Programm 297/298 „Klimafreundlicher Neubau mit QNG" — und damit zum maximalen Kreditrahmen und den günstigsten Zinsen.</p>
+      <a href="kontakt.html" class="btn-gold reveal reveal-delay-3">QNG-Beratung anfragen</a>
+    </div>
+    <div class="qng-badges reveal">
+      <div class="qng-badge"><div class="qng-badge-icon">A</div><h3 class="qng-badge-title">QNG-PLUS</h3><p class="qng-badge-text">Höchste Nachhaltigkeitsstufe. Voraussetzung für KfW-Programm 298 mit maximalem Kreditrahmen.</p></div>
+      <div class="qng-badge"><div class="qng-badge-icon">B</div><h3 class="qng-badge-title">QNG-READY</h3><p class="qng-badge-text">Alle Voraussetzungen erfüllt, Zertifizierung in Vorbereitung. Voller Förderzugang gesichert.</p></div>
+      <div class="qng-badge"><div class="qng-badge-icon">E+</div><h3 class="qng-badge-title">KfW 40+</h3><p class="qng-badge-text">Energetischer Mindeststandard für QNG. U-Wert 0,12 W/m²K serienmäßig bei Exklusiv Bauen.</p></div>
+      <div class="qng-badge"><div class="qng-badge-icon">CO₂</div><h3 class="qng-badge-title">Klimapositiv</h3><p class="qng-badge-text">Holz als CO₂-Speicher: Jedes Haus bindet über Jahrzehnte mehr Kohlenstoff als es erzeugt.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOERDER CARDS -->
+<section class="foerder-section">
+  <div class="foerder-inner">
+    <p class="section-eyebrow reveal">Förderprogramme</p>
+    <h2 class="section-h2 reveal reveal-delay-1" style="color:#fff;">Alle Förderungen <em>im Überblick.</em></h2>
+    <div class="foerder-grid">
+      <div class="foerder-card reveal">
+        <div class="foerder-card-num">297</div>
+        <h3 class="foerder-card-title">KfW Klimafreundlicher Neubau</h3>
+        <p class="foerder-card-text">Günstige Darlehen für klimafreundliche Neubauten. Voraussetzung: KfW-40-Standard (ohne QNG). Kreditrahmen bis 100.000 €.</p>
+        <p class="foerder-card-detail">Bis 100.000 € · ab 0,01% eff.</p>
+      </div>
+      <div class="foerder-card reveal reveal-delay-1">
+        <div class="foerder-card-num">298</div>
+        <h3 class="foerder-card-title">KfW Klimafreundlicher Neubau + QNG</h3>
+        <p class="foerder-card-text">Maximale Förderung für Gebäude mit QNG-Siegel. Höchster Kreditrahmen, günstigste Konditionen, kombinierbar mit Sonder-AfA.</p>
+        <p class="foerder-card-detail">Bis 150.000 € · ab 0,01% eff.</p>
+      </div>
+      <div class="foerder-card reveal reveal-delay-2">
+        <div class="foerder-card-num">§7b</div>
+        <h3 class="foerder-card-title">Sonder-AfA Mietwohnungsbau</h3>
+        <p class="foerder-card-text">Degressive Sonderabschreibung für neue Mietwohnungen: 5% pro Jahr über 4 Jahre, zusätzlich zur linearen AfA von 3% p.a.</p>
+        <p class="foerder-card-detail">5% p.a. × 4 Jahre + 3% linear</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KFW CARD -->
+<section class="kfw-section">
+  <div class="kfw-inner">
+    <div>
+      <p class="section-eyebrow reveal">KfW-Detailinfo</p>
+      <h2 class="section-h2 reveal reveal-delay-1" style="color:#fff;">Kredit mit <em>historisch günstigem Zins.</em></h2>
+      <p class="section-lead reveal reveal-delay-2" style="color:rgba(255,255,255,.55);margin-bottom:24px;">Das KfW-Programm 297/298 stellt Kredite für klimafreundliche Neubauten zur Verfügung. Mit QNG-Siegel erhalten Sie den vollen Kreditrahmen von 150.000 € zu einem effektiven Jahreszins von nur 0,01% — deutlich unter dem Marktzins.</p>
+      <p class="section-lead reveal reveal-delay-2" style="color:rgba(255,255,255,.55);margin-bottom:40px;">Die Kombination aus KfW-Kredit und Sonder-AfA §7b ist ausdrücklich erlaubt und führt für Investoren zu einer Gesamtförderung, die den Bau eines Mehrfamilienhauses in vielen Fällen nahezu selbstfinanzierend macht.</p>
+      <a href="kontakt.html" class="btn-gold reveal reveal-delay-3">Förderberatung buchen</a>
+    </div>
+    <div class="kfw-card reveal">
+      <span class="kfw-tag">KfW · Programm 297/298</span>
+      <div class="kfw-rate">0,01 %</div>
+      <p class="kfw-rate-label">eff. Jahreszins (Beispiel Laufzeit 20 J.)</p>
+      <ul class="kfw-list">
+        <li><span class="kfw-list-label">Kreditrahmen (ohne QNG)</span><span class="kfw-list-value">bis 100.000 €</span></li>
+        <li><span class="kfw-list-label">Kreditrahmen (mit QNG)</span><span class="kfw-list-value">bis 150.000 €</span></li>
+        <li><span class="kfw-list-label">Laufzeit</span><span class="kfw-list-value">bis 35 Jahre</span></li>
+        <li><span class="kfw-list-label">Tilgungsfreie Zeit</span><span class="kfw-list-value">bis 10 Jahre</span></li>
+        <li><span class="kfw-list-label">Kombinierbar mit</span><span class="kfw-list-value">Sonder-AfA §7b</span></li>
+        <li><span class="kfw-list-label">QNG-Nachweis</span><span class="kfw-list-value">inklusive</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- AFA RECHNER -->
+<section class="afa-section">
+  <div class="afa-inner">
+    <p class="section-eyebrow reveal">Steuerrechner</p>
+    <h2 class="section-h2 reveal reveal-delay-1" style="color:#fff;">Ihre Steuerersparnis <em>in Zahlen.</em></h2>
+    <div class="afa-grid reveal">
+      <div class="afa-sliders">
+        <div class="afa-slider-group">
+          <div class="afa-slider-header">
+            <label class="afa-slider-label" for="kaufpreis">Kaufpreis / Herstellungskosten</label>
+            <span class="afa-slider-value" id="kaufpreisVal">450.000 €</span>
+          </div>
+          <input type="range" class="afa-slider" id="kaufpreis" min="200000" max="1500000" step="10000" value="450000" />
+          <div style="display:flex;justify-content:space-between;margin-top:8px;font-family:var(--sans);font-size:11px;color:rgba(255,255,255,.3);"><span>200.000 €</span><span>1.500.000 €</span></div>
+        </div>
+        <div class="afa-slider-group">
+          <div class="afa-slider-header">
+            <label class="afa-slider-label" for="flaeche">Wohnfläche</label>
+            <span class="afa-slider-value" id="flaecheVal">150 m²</span>
+          </div>
+          <input type="range" class="afa-slider" id="flaeche" min="60" max="400" step="10" value="150" />
+          <div style="display:flex;justify-content:space-between;margin-top:8px;font-family:var(--sans);font-size:11px;color:rgba(255,255,255,.3);"><span>60 m²</span><span>400 m²</span></div>
+        </div>
+        <div class="afa-slider-group">
+          <div class="afa-slider-header">
+            <label class="afa-slider-label" for="steuer">Persönlicher Steuersatz</label>
+            <span class="afa-slider-value" id="steuerVal">42 %</span>
+          </div>
+          <input type="range" class="afa-slider" id="steuer" min="20" max="50" step="1" value="42" />
+          <div style="display:flex;justify-content:space-between;margin-top:8px;font-family:var(--sans);font-size:11px;color:rgba(255,255,255,.3);"><span>20 %</span><span>50 %</span></div>
+        </div>
+      </div>
+      <div class="afa-result">
+        <p class="afa-result-label">Geschätzte Steuerersparnis</p>
+        <div class="afa-result-num" id="afaResult">37.800 €</div>
+        <p class="afa-result-sub">über 4 Jahre Sonder-AfA (§7b EStG)</p>
+        <div class="afa-bars">
+          <div class="afa-bar-row"><span class="afa-bar-label">Jahr 1</span><div class="afa-bar-track"><div class="afa-bar-fill" id="bar1" style="width:100%"></div></div><span class="afa-bar-amount" id="barAmt1">9.450 €</span></div>
+          <div class="afa-bar-row"><span class="afa-bar-label">Jahr 2</span><div class="afa-bar-track"><div class="afa-bar-fill" id="bar2" style="width:100%"></div></div><span class="afa-bar-amount" id="barAmt2">9.450 €</span></div>
+          <div class="afa-bar-row"><span class="afa-bar-label">Jahr 3</span><div class="afa-bar-track"><div class="afa-bar-fill" id="bar3" style="width:100%"></div></div><span class="afa-bar-amount" id="barAmt3">9.450 €</span></div>
+          <div class="afa-bar-row"><span class="afa-bar-label">Jahr 4</span><div class="afa-bar-track"><div class="afa-bar-fill" id="bar4" style="width:100%"></div></div><span class="afa-bar-amount" id="barAmt4">9.450 €</span></div>
+        </div>
+        <p class="afa-disclaimer">Steuerliche Beratung durch einen Fachmann empfohlen. Voraussetzung: Neubau 2023–2026, Mietnutzung, max. 4.000 €/m². Angaben ohne Gewähr.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NACHHALTIGKEIT STATS -->
+<section class="nach-section">
+  <div class="nach-inner">
+    <p class="section-eyebrow reveal">Nachhaltigkeit</p>
+    <h2 class="section-h2 reveal reveal-delay-1" style="color:#fff;">Holzbau ist <em>Klimaschutz.</em></h2>
+    <div class="nach-stats">
+      <div class="nach-stat reveal">
+        <div class="nach-num">–50 %</div>
+        <div class="nach-label">CO₂-Emissionen</div>
+        <div class="nach-sub">weniger als vergleichbarer Massivbau über den Lebenszyklus</div>
+      </div>
+      <div class="nach-stat reveal reveal-delay-1">
+        <div class="nach-num">1 t</div>
+        <div class="nach-label">CO₂ gebunden</div>
+        <div class="nach-sub">pro Kubikmeter verbautes Holz dauerhaft gespeichert</div>
+      </div>
+      <div class="nach-stat reveal reveal-delay-2">
+        <div class="nach-num">55 %</div>
+        <div class="nach-label">weniger Heizkosten</div>
+        <div class="nach-sub">durch KfW40+ Standard gegenüber Altbau-Bestand</div>
+      </div>
+      <div class="nach-stat reveal reveal-delay-3">
+        <div class="nach-num">100 %</div>
+        <div class="nach-label">Recyclingquote</div>
+        <div class="nach-sub">Holz am Ende der Nutzung vollständig wiederverwertbar</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <h2 class="reveal">Förderung, die sich <em>rechnet.</em></h2>
+  <p class="reveal reveal-delay-1">Lassen Sie unsere Experten Ihr Förderpotenzial berechnen — kostenlos, unverbindlich und konkret auf Ihr Vorhaben zugeschnitten.</p>
+  <div class="cta-btns reveal reveal-delay-2">
+    <a href="kontakt.html" class="btn-gold">Förderberatung anfragen</a>
+    <a href="fertighaeuser.html" class="btn-ghost-dark">Zu den Fertighäusern</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div><img src="images/logo.png" alt="Exklusiv Bauen" class="footer-logo" /><p class="footer-tagline">Holz, das bleibt.<br/>Architektur, die wirkt.</p><div class="footer-socials"><a href="#" class="footer-social" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a></div></div>
+      <div><p class="footer-col-title">Leistungen</p><ul class="footer-links"><li><a href="fertighaeuser.html">Fertighäuser</a></li><li><a href="gewerbe.html">Gewerbe & Anlage</a></li><li><a href="tiny-houses.html">Tiny Houses</a></li><li><a href="qng.html">QNG & Förderung</a></li></ul></div>
+      <div><p class="footer-col-title">Unternehmen</p><ul class="footer-links"><li><a href="index.html#about">Über uns</a></li><li><a href="index.html#team">Team</a></li><li><a href="index.html#ablauf">Ablauf</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
+      <div><p class="footer-col-title">Kontakt</p><div class="footer-address"><strong>Berlin</strong>Kurfürstendamm 194, 10707 Berlin<br/>+49 30 / 880 44 80<br/><br/><strong>Brandenburg</strong>Großbeerenstraße 12, 14482 Potsdam<br/>+49 331 / 270 35 00</div></div>
+    </div>
+    <div class="footer-bottom"><p class="footer-copy">© 2025 Exklusiv Bauen by Merando Marketing GmbH.</p><div class="footer-legal"><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">AGB</a></div></div>
+  </div>
+</footer>
+<button class="scroll-top" id="scrollTop" aria-label="Nach oben"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg></button>
+<script>
+const progressBar=document.getElementById('scrollProgress');
+const nav=document.getElementById('mainNav');
+window.addEventListener('scroll',()=>{const p=window.scrollY/(document.body.scrollHeight-window.innerHeight);progressBar.style.width=(p*100)+'%';nav.classList.toggle('scrolled',window.scrollY>60);},{passive:true});
+const scrollTopBtn=document.getElementById('scrollTop');
+window.addEventListener('scroll',()=>scrollTopBtn.classList.toggle('visible',window.scrollY>400),{passive:true});
+scrollTopBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+const hamburger=document.getElementById('hamburger');
+const mobileNav=document.getElementById('mobileNav');
+hamburger.addEventListener('click',()=>{hamburger.classList.toggle('active');mobileNav.classList.toggle('open');document.body.style.overflow=mobileNav.classList.contains('open')?'hidden':'';});
+mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{hamburger.classList.remove('active');mobileNav.classList.remove('open');document.body.style.overflow='';}));
+const reveals=document.querySelectorAll('.reveal,.reveal-img');
+const observer=new IntersectionObserver((entries)=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}}),{threshold:0.1,rootMargin:'0px 0px -60px 0px'});
+reveals.forEach(el=>observer.observe(el));
+function formatEur(n){return n.toLocaleString('de-DE')+' €';}
+function updateAfa(){
+  const kaufpreis=parseInt(document.getElementById('kaufpreis').value);
+  const steuer=parseInt(document.getElementById('steuer').value)/100;
+  const flaeche=parseInt(document.getElementById('flaeche').value);
+  document.getElementById('kaufpreisVal').textContent=formatEur(kaufpreis);
+  document.getElementById('flaecheVal').textContent=flaeche+' m²';
+  document.getElementById('steuerVal').textContent=(steuer*100).toFixed(0)+' %';
+  const afaPerYear=kaufpreis*0.05;
+  const savingPerYear=Math.round(afaPerYear*steuer);
+  const total=savingPerYear*4;
+  document.getElementById('afaResult').textContent=formatEur(total);
+  for(let i=1;i<=4;i++){document.getElementById('barAmt'+i).textContent=formatEur(savingPerYear);document.getElementById('bar'+i).style.width='100%';}
+}
+['kaufpreis','flaeche','steuer'].forEach(id=>document.getElementById(id).addEventListener('input',updateAfa));
+updateAfa();
+</script>
+</body>
+</html>
