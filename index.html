@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Exklusiv Bauen — Holz, das bleibt. Architektur, die wirkt.</title>
-<meta name="description" content="Exklusiv Bauen by Merando Marketing: Schlüsselfertige Fertighäuser in Holzständerbauweise, Gewerbe- & Anlageobjekte und Tiny Houses. QNG-zertifiziert, KfW40+, Berlin-Brandenburg." />
+<title>Exklusiv Bauen by Temel — Holz, das bleibt. Architektur, die wirkt.</title>
+<meta name="description" content="Exklusiv Bauen by Temel: Schlüsselfertige Fertighäuser in Holzständerbauweise, Gewerbe- & Anlageobjekte und Tiny Houses. QNG-zertifiziert, KfW40+, Berlin-Brandenburg." />
 <meta property="og:title" content="Exklusiv Bauen — Holz, das bleibt. Architektur, die wirkt." />
 <meta property="og:type" content="website" />
 <meta name="theme-color" content="#B8924A" />
@@ -92,12 +92,13 @@ body {
   text-decoration: none;
   flex-shrink: 0;
 }
-.nav-logo-mark {
+.nav-logo {
+  height: 44px;
+  width: auto;
+  filter: brightness(0) invert(1);
   flex-shrink: 0;
-  color: rgba(255,255,255,.5);
-  transition: opacity .25s;
+  opacity: .92;
 }
-.nav-brand:hover .nav-logo-mark { opacity: .8; }
 .nav-wordmark {
   display: flex;
   flex-direction: column;
@@ -306,12 +307,11 @@ body {
 .hero-corner-bl { bottom: 160px; left: 40px; }
 .hero-corner-br { bottom: 160px; right: 40px; text-align: right; }
 
-/* Eyebrow line */
+/* Eyebrow line — right side, clear of all content */
 .hero-eyebrow {
   position: absolute;
-  top: 50%;
-  left: 40px;
-  transform: translateY(-50%);
+  top: 160px;
+  right: 40px;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -321,6 +321,7 @@ body {
   letter-spacing: .2em;
   text-transform: uppercase;
   color: var(--gold-500);
+  opacity: .55;
 }
 .hero-eyebrow-line {
   width: 0;
@@ -1802,16 +1803,24 @@ body {
   align-items: center;
   text-align: center;
 }
+.preloader-logo {
+  height: 72px;
+  width: auto;
+  filter: brightness(0) invert(1);
+  margin-bottom: 24px;
+  opacity: 0;
+  animation: preloaderFadeIn .8s ease forwards;
+}
 .preloader-wordmark {
   font-family: var(--serif);
-  font-size: clamp(40px, 5vw, 60px);
+  font-size: clamp(36px, 4vw, 52px);
   font-weight: 300;
   color: #fff;
   letter-spacing: .02em;
   line-height: 1;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   opacity: 0;
-  animation: preloaderFadeIn .9s ease forwards;
+  animation: preloaderFadeIn .9s .1s ease forwards;
 }
 .preloader-sub {
   font-family: var(--sans);
@@ -1950,8 +1959,9 @@ body {
 <!-- PRELOADER -->
 <div id="preloader" class="preloader">
   <div class="preloader-inner">
+    <img src="images/logo.avif" alt="Exklusiv Bauen" class="preloader-logo" />
     <p class="preloader-wordmark">Exklusiv Bauen</p>
-    <p class="preloader-sub">By Merando Marketing</p>
+    <p class="preloader-sub">by Temel</p>
     <div class="preloader-bar-track">
       <div class="preloader-bar"></div>
     </div>
@@ -1963,14 +1973,10 @@ body {
 <!-- NAVIGATION -->
 <nav class="nav" id="mainNav">
   <a href="index.html" class="nav-brand">
-    <svg class="nav-logo-mark" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="1" y="1" width="30" height="30" stroke="currentColor" stroke-width="1.2" fill="none" opacity=".4"/>
-      <path d="M16 5L27 16L16 27L5 16Z" fill="var(--gold-700)" opacity=".9"/>
-      <path d="M16 9L23 16L16 23L9 16Z" fill="none" stroke="var(--gold-300)" stroke-width=".8" opacity=".6"/>
-    </svg>
+    <img src="images/logo.avif" alt="Exklusiv Bauen" class="nav-logo" />
     <div class="nav-wordmark">
       <span class="nav-wordmark-main">Exklusiv Bauen</span>
-      <span class="nav-wordmark-sub">By Merando Marketing</span>
+      <span class="nav-wordmark-sub">by Temel</span>
     </div>
   </a>
   <ul class="nav-links">
@@ -2002,9 +2008,10 @@ body {
 <!-- HERO -->
 <section class="hero" id="hero">
   <div class="hero-slider" id="heroSlider">
-    <div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=2400&q=85')"></div>
-    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1613977257363-707ba9348227?w=2400&q=85')"></div>
-    <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=2400&q=85')"></div>
+    <div class="hero-slide active" style="background-image:url('images/haus1.png'); background-position: center 40%;"></div>
+    <div class="hero-slide" style="background-image:url('images/haus2.png'); background-position: center 40%;"></div>
+    <div class="hero-slide" style="background-image:url('images/haus3.webp'); background-position: center 50%;"></div>
+    <div class="hero-slide" style="background-image:url('images/haus4.webp'); background-position: center 40%;"></div>
   </div>
   <div class="hero-bg" id="heroBg"></div>
   <div class="hero-vignette"></div>
@@ -2014,6 +2021,7 @@ body {
     <button class="hero-slider-dot active" data-idx="0"></button>
     <button class="hero-slider-dot" data-idx="1"></button>
     <button class="hero-slider-dot" data-idx="2"></button>
+    <button class="hero-slider-dot" data-idx="3"></button>
   </div>
   <span class="hero-corner hero-corner-tl">N° 01 · Holzbau · Berlin-Brandenburg</span>
   <span class="hero-corner hero-corner-tr">EST. XXV</span>
@@ -2022,7 +2030,7 @@ body {
 
   <div class="hero-eyebrow">
     <span class="hero-eyebrow-line"></span>
-    Exklusiv Bauen — Merando Marketing
+    Exklusiv Bauen — by Temel
   </div>
 
   <div class="hero-content">
@@ -2145,7 +2153,7 @@ body {
     <p class="about-eyebrow reveal">Über uns</p>
     <h2 class="about-h2 reveal reveal-delay-1">Vom ersten Strich bis zur <em>einzugsfertigen Übergabe.</em></h2>
     <p class="about-lead reveal reveal-delay-2">
-      Exklusiv Bauen by Merando Marketing steht für ganzheitliche Baubegleitung. Wir verbinden die handwerkliche Präzision moderner Holzständerbauweise mit tiefem Verständnis für Fördermöglichkeiten, Steueroptimierung und nachhaltige Architektur. Unser Team begleitet Sie von der ersten Grundstücksprüfung bis zur Schlüsselübergabe — transparent, termingerecht, im Festpreis.
+      Exklusiv Bauen by Temel steht für ganzheitliche Baubegleitung. Wir verbinden die handwerkliche Präzision moderner Holzständerbauweise mit tiefem Verständnis für Fördermöglichkeiten, Steueroptimierung und nachhaltige Architektur. Unser Team begleitet Sie von der ersten Grundstücksprüfung bis zur Schlüsselübergabe — transparent, termingerecht, im Festpreis.
     </p>
     <div class="about-stats reveal reveal-delay-3">
       <div class="about-stat">
@@ -2639,7 +2647,7 @@ body {
       <div>
         <div class="footer-brand">
           <span class="footer-brand-main">Exklusiv Bauen</span>
-          <span class="footer-brand-sub">By Merando Marketing</span>
+          <span class="footer-brand-sub">by Temel</span>
         </div>
         <p class="footer-tagline">Holz, das bleibt.<br/>Architektur, die wirkt.</p>
         <div class="footer-socials">
@@ -2687,7 +2695,7 @@ body {
       </div>
     </div>
     <div class="footer-bottom">
-      <p class="footer-copy">© 2025 Exklusiv Bauen by Merando Marketing GmbH. Alle Rechte vorbehalten.</p>
+      <p class="footer-copy">© 2025 Exklusiv Bauen by Temel. Alle Rechte vorbehalten.</p>
       <div class="footer-legal">
         <a href="#">Impressum</a>
         <a href="#">Datenschutz</a>
