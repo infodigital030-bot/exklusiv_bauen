@@ -372,9 +372,10 @@ body {
   font-family: var(--serif);
   font-size: clamp(17px, 1.6vw, 22px);
   font-weight: 300;
-  color: rgba(255,255,255,.75);
+  color: rgba(255,255,255,.93);
   max-width: 480px;
   line-height: 1.55;
+  text-shadow: 0 1px 8px rgba(0,0,0,.5);
 }
 .hero-lead strong {
   color: var(--gold-400, #D4B574);
@@ -786,6 +787,52 @@ body {
 }
 .offer-panel.light .offer-feature-value { color: var(--ink-800); }
 .offer-panel.dark .offer-feature-value { color: rgba(255,255,255,.85); }
+
+/* ── PARALLAX DIVIDER ── */
+.parallax-divider {
+  position: relative;
+  height: 55vh;
+  min-height: 340px;
+  background-image: url('images/haus2.png');
+  background-size: cover;
+  background-position: center 40%;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.parallax-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(20,17,13,.65) 0%, rgba(20,17,13,.35) 100%);
+}
+.parallax-text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+.parallax-eyebrow {
+  display: block;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--gold-500);
+  margin-bottom: 16px;
+}
+.parallax-quote {
+  font-family: var(--serif);
+  font-size: clamp(36px, 5vw, 72px);
+  font-weight: 300;
+  color: #fff;
+  line-height: 1.1;
+  letter-spacing: -.01em;
+}
+.parallax-quote em {
+  font-style: italic;
+  color: var(--gold-400, #D4B574);
+}
 
 /* ── QUALITY GRID ── */
 .quality {
@@ -1917,6 +1964,7 @@ body {
   }
 }
 @media (max-width: 768px) {
+  .parallax-divider { background-attachment: scroll; height: 44vh; min-height: 260px; }
   .nav { padding: 18px 20px; }
   .nav.scrolled { padding: 12px 20px; }
   .nav-links, .nav-cta { display: none; }
@@ -2235,6 +2283,15 @@ body {
   </div>
 </section>
 
+<!-- PARALLAX DIVIDER -->
+<div class="parallax-divider">
+  <div class="parallax-overlay"></div>
+  <div class="parallax-text">
+    <span class="parallax-eyebrow">Berlin · Brandenburg</span>
+    <p class="parallax-quote">Ihr Traumhaus. <em>Schlüsselfertig.</em></p>
+  </div>
+</div>
+
 <!-- QUALITY GRID -->
 <section class="quality" id="quality">
   <div class="section-header">
@@ -2487,9 +2544,9 @@ body {
     </div>
     <div class="team-grid">
       <div class="team-card reveal">
-        <img src="images/team1.jpg" alt="Marcus Weißenberg" class="team-img" loading="lazy" />
+        <img src="images/team1.jpg" alt="Devlet Temel" class="team-img" loading="lazy" />
         <div class="team-info">
-          <p class="team-name">Marcus Weißenberg</p>
+          <p class="team-name">Devlet Temel</p>
           <p class="team-role">Geschäftsführer</p>
         </div>
       </div>
