@@ -45,7 +45,7 @@ body { font-family: var(--sans); background: var(--cream); color: var(--ink-700)
 .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 24px 40px; display: flex; align-items: center; justify-content: space-between; transition: padding .4s, background .4s, backdrop-filter .4s; }
 .nav.scrolled { padding: 14px 40px; background: rgba(20,17,13,.88); backdrop-filter: blur(16px) saturate(1.4); border-bottom: 1px solid var(--line-dark); }
 .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; flex-shrink: 0; }
-.nav-logo { height: 36px; width: auto; filter: brightness(0) invert(1); }
+.nav-logo { height: 36px; width: auto; }
 .nav-wordmark { display: flex; flex-direction: column; gap: 1px; }
 .nav-wordmark-main { font-family: var(--serif); font-size: 20px; font-weight: 500; color: #fff; line-height: 1; }
 .nav-wordmark-sub { font-family: var(--sans); font-size: 9px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--gold-500); }
@@ -145,7 +145,7 @@ body { font-family: var(--sans); background: var(--cream); color: var(--ink-700)
 .footer { background: var(--ink-900); padding: 80px 40px 40px; border-top: 1px solid rgba(255,255,255,.06); }
 .footer-inner { max-width: 1280px; margin: 0 auto; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 2fr; gap: 60px; padding-bottom: 60px; border-bottom: 1px solid rgba(255,255,255,.06); margin-bottom: 40px; }
-.footer-logo { height: 32px; filter: brightness(0) invert(1); opacity: .7; margin-bottom: 16px; }
+.footer-logo { height: 32px; opacity: .9; margin-bottom: 16px; }
 .footer-tagline { font-family: var(--serif); font-size: 16px; font-style: italic; color: rgba(255,255,255,.45); line-height: 1.6; margin-bottom: 28px; }
 .footer-socials { display: flex; gap: 12px; }
 .footer-social { width: 36px; height: 36px; border: 1px solid rgba(255,255,255,.12); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.4); text-decoration: none; transition: border-color .2s, color .2s; }
@@ -207,7 +207,7 @@ body { font-family: var(--sans); background: var(--cream); color: var(--ink-700)
 
 <nav class="nav" id="mainNav">
   <a href="index.html" class="nav-brand">
-    <img src="images/logo.png" alt="Exklusiv Bauen" class="nav-logo" />
+    <img src="images/logo.avif" alt="Exklusiv Bauen" class="nav-logo" />
     <div class="nav-wordmark">
       <span class="nav-wordmark-main">Exklusiv Bauen</span>
       <span class="nav-wordmark-sub">By Merando Marketing</span>
@@ -237,7 +237,7 @@ body { font-family: var(--sans); background: var(--cream); color: var(--ink-700)
 
 <!-- HERO -->
 <section class="page-hero">
-  <div class="page-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=2400&q=85');"></div>
+  <div class="page-hero-bg" style="background-image: url('images/haus1.png');"></div>
   <div class="page-hero-vignette"></div>
   <div class="page-hero-content">
     <p class="page-hero-eyebrow">Eigenheime · Berlin-Brandenburg</p>
@@ -273,7 +273,7 @@ body { font-family: var(--sans); background: var(--cream); color: var(--ink-700)
     <div class="models-grid">
       <div class="model-card reveal">
         <div style="overflow:hidden;">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=85" alt="Linie Klassik" class="model-img" loading="lazy" />
+          <img src="images/danwood1.webp" alt="Linie Klassik" class="model-img" loading="lazy" />
         </div>
         <div class="model-body">
           <span class="model-tag">Einsteiger</span>
@@ -290,7 +290,7 @@ body { font-family: var(--sans); background: var(--cream); color: var(--ink-700)
       </div>
       <div class="model-card reveal reveal-delay-1">
         <div style="overflow:hidden;">
-          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900&q=85" alt="Linie Prestige" class="model-img" loading="lazy" />
+          <img src="images/danwood2.webp" alt="Linie Prestige" class="model-img" loading="lazy" />
         </div>
         <div class="model-body">
           <span class="model-tag">Beliebt</span>
@@ -307,7 +307,7 @@ body { font-family: var(--sans); background: var(--cream); color: var(--ink-700)
       </div>
       <div class="model-card reveal reveal-delay-2">
         <div style="overflow:hidden;">
-          <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&q=85" alt="Linie Exklusiv" class="model-img" loading="lazy" />
+          <img src="images/danwood3.webp" alt="Linie Exklusiv" class="model-img" loading="lazy" />
         </div>
         <div class="model-body">
           <span class="model-tag">Premium</span>
@@ -328,7 +328,7 @@ body { font-family: var(--sans); background: var(--cream); color: var(--ink-700)
 
 <!-- DANWOOD PARTNERSHIP -->
 <div class="split-section">
-  <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=85" alt="Danwood Holzbau" class="split-img reveal-img" loading="lazy" />
+  <img src="images/danwood4.webp" alt="Danwood Holzbau" class="split-img reveal-img" loading="lazy" />
   <div class="split-content light" style="padding:80px 72px;">
     <p class="section-eyebrow reveal">Unsere Partnerschaft</p>
     <h2 class="section-h2 reveal reveal-delay-1">Danwood — <em>Europas führender</em> Holzhausbauer.</h2>
@@ -399,8 +399,8 @@ body { font-family: var(--sans); background: var(--cream); color: var(--ink-700)
   <div class="footer-inner">
     <div class="footer-grid">
       <div>
-        <img src="images/logo.png" alt="Exklusiv Bauen" class="footer-logo" />
-        <p class="footer-tagline">Holz, das bleibt.<br/>Architektur, die wirkt.</p>
+        <img src="images/logo.avif" alt="Exklusiv Bauen" class="footer-logo" />
+        <p class="footer-tagline">Bau nach höchster Qualität.<br/>Architektur, die wirkt.</p>
         <div class="footer-socials">
           <a href="#" class="footer-social" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
           <a href="#" class="footer-social" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M8 11v5M8 8v.01M12 16v-5M12 11c0-1 1-2 3-2s3 1 3 2v5"/></svg></a>

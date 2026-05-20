@@ -17,7 +17,7 @@ body{font-family:var(--sans);background:var(--cream);color:var(--ink-700);overfl
 .nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:24px 40px;display:flex;align-items:center;justify-content:space-between;transition:padding .4s,background .4s,backdrop-filter .4s;}
 .nav.scrolled{padding:14px 40px;background:rgba(20,17,13,.88);backdrop-filter:blur(16px) saturate(1.4);border-bottom:1px solid var(--line-dark);}
 .nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0;}
-.nav-logo{height:36px;width:auto;filter:brightness(0) invert(1);}
+.nav-logo{height:36px;width:auto;}
 .nav-wordmark{display:flex;flex-direction:column;gap:1px;}
 .nav-wordmark-main{font-family:var(--serif);font-size:20px;font-weight:500;color:#fff;line-height:1;}
 .nav-wordmark-sub{font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-500);}
@@ -128,7 +128,7 @@ body{font-family:var(--sans);background:var(--cream);color:var(--ink-700);overfl
 .footer{background:var(--ink-900);padding:80px 40px 40px;border-top:1px solid rgba(255,255,255,.06);}
 .footer-inner{max-width:1280px;margin:0 auto;}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 2fr;gap:60px;padding-bottom:60px;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:40px;}
-.footer-logo{height:32px;filter:brightness(0) invert(1);opacity:.7;margin-bottom:16px;}
+.footer-logo{height:32px;opacity:.9;margin-bottom:16px;}
 .footer-tagline{font-family:var(--serif);font-size:16px;font-style:italic;color:rgba(255,255,255,.45);line-height:1.6;margin-bottom:28px;}
 .footer-socials{display:flex;gap:12px;}
 .footer-social{width:36px;height:36px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.4);text-decoration:none;transition:border-color .2s,color .2s;}
@@ -156,7 +156,7 @@ body{font-family:var(--sans);background:var(--cream);color:var(--ink-700);overfl
 <div id="scrollProgress"></div>
 <nav class="nav" id="mainNav">
   <a href="index.html" class="nav-brand">
-    <img src="images/logo.png" alt="Exklusiv Bauen" class="nav-logo" />
+    <img src="images/logo.avif" alt="Exklusiv Bauen" class="nav-logo" />
     <div class="nav-wordmark"><span class="nav-wordmark-main">Exklusiv Bauen</span><span class="nav-wordmark-sub">By Merando Marketing</span></div>
   </a>
   <ul class="nav-links">
@@ -333,7 +333,7 @@ body{font-family:var(--sans);background:var(--cream);color:var(--ink-700);overfl
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-grid">
-      <div><img src="images/logo.png" alt="Exklusiv Bauen" class="footer-logo" /><p class="footer-tagline">Holz, das bleibt.<br/>Architektur, die wirkt.</p><div class="footer-socials"><a href="#" class="footer-social" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a></div></div>
+      <div><img src="images/logo.avif" alt="Exklusiv Bauen" class="footer-logo" /><p class="footer-tagline">Bau nach höchster Qualität.<br/>Architektur, die wirkt.</p><div class="footer-socials"><a href="#" class="footer-social" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a></div></div>
       <div><p class="footer-col-title">Leistungen</p><ul class="footer-links"><li><a href="fertighaeuser.html">Fertighäuser</a></li><li><a href="gewerbe.html">Gewerbe & Anlage</a></li><li><a href="tiny-houses.html">Tiny Houses</a></li><li><a href="qng.html">QNG & Förderung</a></li></ul></div>
       <div><p class="footer-col-title">Unternehmen</p><ul class="footer-links"><li><a href="index.html#about">Über uns</a></li><li><a href="index.html#team">Team</a></li><li><a href="index.html#ablauf">Ablauf</a></li><li><a href="kontakt.html">Kontakt</a></li></ul></div>
       <div><p class="footer-col-title">Kontakt</p><div class="footer-address"><strong>Berlin</strong>Kurfürstendamm 194, 10707 Berlin<br/>+49 30 / 880 44 80<br/><br/><strong>Brandenburg</strong>Großbeerenstraße 12, 14482 Potsdam<br/>+49 331 / 270 35 00</div></div>

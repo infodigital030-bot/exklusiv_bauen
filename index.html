@@ -791,11 +791,11 @@ body {
 /* ── PARALLAX DIVIDER ── */
 .parallax-divider {
   position: relative;
-  height: 55vh;
-  min-height: 340px;
+  height: 65vh;
+  min-height: 420px;
   background-image: url('images/haus2.png');
   background-size: cover;
-  background-position: center 40%;
+  background-position: center 30%;
   background-attachment: fixed;
   display: flex;
   align-items: center;
@@ -804,7 +804,7 @@ body {
 .parallax-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(20,17,13,.65) 0%, rgba(20,17,13,.35) 100%);
+  background: linear-gradient(135deg, rgba(20,17,13,.5) 0%, rgba(20,17,13,.2) 100%);
 }
 .parallax-text {
   position: relative;
@@ -1801,6 +1801,12 @@ body {
 .l-card:hover .l-card-cta { gap: 12px; color: var(--gold-300); }
 
 /* ── FOOTER BRAND (text-based wordmark) ── */
+.footer-logo-img {
+  height: 48px;
+  width: auto;
+  margin-bottom: 12px;
+  display: block;
+}
 .footer-brand {
   display: flex;
   flex-direction: column;
@@ -2689,6 +2695,7 @@ body {
     <div class="footer-grid">
       <div>
         <div class="footer-brand">
+          <img src="images/logo.avif" alt="Exklusiv Bauen" class="footer-logo-img">
           <span class="footer-brand-main">Exklusiv Bauen</span>
           <span class="footer-brand-sub">by Temel</span>
         </div>
