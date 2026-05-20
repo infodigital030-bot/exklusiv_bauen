@@ -230,48 +230,18 @@ body {
   overflow: hidden;
   background: var(--ink-900);
 }
-/* ---- HERO SLIDER ---- */
-.hero-slider { position: absolute; inset: 0; overflow: hidden; }
-.hero-slide {
+/* ---- HERO VIDEO ---- */
+.hero-video {
   position: absolute;
-  inset: -8% 0;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: opacity 1.6s cubic-bezier(0.4,0,0.2,1);
-  will-change: opacity, transform;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
-.hero-slide.active { opacity: 1; }
-.hero-slide.active { animation: hero-kenburns 9s cubic-bezier(0,0,0.3,1) forwards; }
-@keyframes hero-kenburns {
-  from { transform: scale(1) translateY(0); }
-  to   { transform: scale(1.1) translateY(-1%); }
-}
-/* Slider dots */
-.hero-slider-dots {
-  position: absolute;
-  bottom: 44px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
-  z-index: 5;
-}
-.hero-slider-dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: rgba(255,255,255,.3);
-  border: none;
-  cursor: pointer;
-  transition: all .4s;
-  padding: 0;
-}
-.hero-slider-dot.active {
-  background: var(--gold-300);
-  width: 28px;
-  border-radius: 3px;
-}
-/* legacy .hero-bg kept for JS compat */
+/* legacy kept for compat */
+.hero-slider { display: none; }
+.hero-slider-dots { display: none; }
 .hero-bg { display: none; }
 .hero-vignette {
   position: absolute;
@@ -2004,22 +1974,11 @@ body {
 
 <!-- HERO -->
 <section class="hero" id="hero">
-  <div class="hero-slider" id="heroSlider">
-    <div class="hero-slide active" style="background-image:url('images/haus1.png'); background-position: center 40%;"></div>
-    <div class="hero-slide" style="background-image:url('images/haus2.png'); background-position: center 40%;"></div>
-    <div class="hero-slide" style="background-image:url('images/haus3.webp'); background-position: center 60%;"></div>
-    <div class="hero-slide" style="background-image:url('images/haus4.webp'); background-position: center 40%;"></div>
-  </div>
-  <div class="hero-bg" id="heroBg"></div>
+  <video class="hero-video" autoplay muted loop playsinline>
+    <source src="images/hero.mp4" type="video/mp4">
+  </video>
   <div class="hero-vignette"></div>
   <div class="hero-grid-overlay"></div>
-
-  <div class="hero-slider-dots" id="heroDots">
-    <button class="hero-slider-dot active" data-idx="0"></button>
-    <button class="hero-slider-dot" data-idx="1"></button>
-    <button class="hero-slider-dot" data-idx="2"></button>
-    <button class="hero-slider-dot" data-idx="3"></button>
-  </div>
   <span class="hero-corner hero-corner-tl">N° 01 · Holzbau · Berlin-Brandenburg</span>
   <span class="hero-corner hero-corner-tr">EST. XXV</span>
 
@@ -2719,42 +2678,6 @@ body {
   else { window.addEventListener('load', dismiss); }
 })();
 
-// ── HERO SLIDER ──
-(function() {
-  const sliderEl = document.getElementById('heroSlider');
-  if (!sliderEl) return;
-  const slides = Array.from(sliderEl.querySelectorAll('.hero-slide'));
-  const dotEls = Array.from(document.querySelectorAll('.hero-slider-dot'));
-  if (slides.length < 2) return;
-  let idx = 0;
-  let timer;
-
-  function goTo(next) {
-    slides[idx].classList.remove('active');
-    dotEls[idx] && dotEls[idx].classList.remove('active');
-    idx = next;
-    const slide = slides[idx];
-    // Reset Ken Burns animation
-    slide.style.animation = 'none';
-    void slide.offsetHeight; // reflow
-    slide.style.animation = '';
-    slide.classList.add('active');
-    dotEls[idx] && dotEls[idx].classList.add('active');
-  }
-
-  function startTimer() {
-    clearInterval(timer);
-    timer = setInterval(function() { goTo((idx + 1) % slides.length); }, 7000);
-  }
-
-  dotEls.forEach(function(dot) {
-    dot.addEventListener('click', function() {
-      goTo(parseInt(dot.dataset.idx));
-      startTimer();
-    });
-  });
-  startTimer();
-})();
 
 // ── SCROLL PROGRESS ──
 const progressBar = document.getElementById('scrollProgress');
