@@ -275,6 +275,34 @@ body {
 .hero-corner-bl { bottom: 160px; left: 40px; }
 .hero-corner-br { bottom: 160px; right: 40px; text-align: right; }
 
+.hero-qng-badge {
+  position: absolute;
+  bottom: 48px;
+  right: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  z-index: 4;
+}
+.hero-qng-img {
+  height: 72px;
+  width: auto;
+  opacity: .82;
+  filter: drop-shadow(0 2px 12px rgba(0,0,0,.5));
+  transition: opacity .3s;
+}
+.hero-qng-badge:hover .hero-qng-img { opacity: 1; }
+.hero-qng-label {
+  font-family: var(--sans);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--gold-500);
+  opacity: .75;
+}
+
 /* Eyebrow line — right side, clear of all content */
 .hero-eyebrow {
   position: absolute;
@@ -911,6 +939,14 @@ body {
   font-family: var(--serif);
 }
 
+.kfw-qng-logo {
+  display: block;
+  height: 80px;
+  width: auto;
+  margin: 0 auto 28px;
+  opacity: .9;
+  filter: drop-shadow(0 0 16px rgba(184,146,74,.25));
+}
 .kfw-card {
   background: rgba(255,255,255,.04);
   border: 1px solid rgba(184,146,74,.3);
@@ -1981,6 +2017,10 @@ body {
   <div class="hero-grid-overlay"></div>
   <span class="hero-corner hero-corner-tl">N° 01 · Holzbau · Berlin-Brandenburg</span>
   <span class="hero-corner hero-corner-tr">EST. XXV</span>
+  <div class="hero-qng-badge">
+    <img src="images/qng-logo.avif" alt="QNG Zertifizierung" class="hero-qng-img">
+    <span class="hero-qng-label">QNG-zertifiziert</span>
+  </div>
 
   <div class="hero-content">
     <h1 class="hero-headline">
@@ -2297,6 +2337,7 @@ body {
       </ol>
     </div>
     <div class="kfw-card reveal">
+      <img src="images/qng-logo.avif" alt="QNG Qualitätssiegel" class="kfw-qng-logo">
       <span class="kfw-tag">KfW · Programm 297/298</span>
       <div class="kfw-rate">0,01 %</div>
       <p class="kfw-rate-label">eff. Jahreszins KfW-Kredit</p>
