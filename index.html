@@ -276,21 +276,18 @@ body {
 .hero-corner-br { bottom: 160px; right: 40px; text-align: right; }
 
 .hero-qng-badge {
-  position: absolute;
-  bottom: 48px;
-  right: 40px;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
-  z-index: 4;
+  gap: 5px;
   background: #fff;
-  border-radius: 12px;
-  padding: 10px 14px 8px;
-  box-shadow: 0 4px 24px rgba(0,0,0,.3);
+  border-radius: 10px;
+  padding: 8px 12px 6px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.35);
+  margin-bottom: 16px;
 }
 .hero-qng-img {
-  height: 56px;
+  height: 48px;
   width: auto;
 }
 .hero-qng-label {
@@ -2011,11 +2008,6 @@ body {
   <div class="hero-grid-overlay"></div>
   <span class="hero-corner hero-corner-tl">N° 01 · Holzbau · Berlin-Brandenburg</span>
   <span class="hero-corner hero-corner-tr">EST. XXV</span>
-  <div class="hero-qng-badge">
-    <img src="images/qng-logo.avif" alt="QNG Zertifizierung" class="hero-qng-img">
-    <span class="hero-qng-label">QNG-zertifiziert</span>
-  </div>
-
   <div class="hero-content">
     <h1 class="hero-headline">
       <span class="hero-line">Holz, das</span>
@@ -2029,6 +2021,10 @@ body {
         Von Fertighäusern bis Gewerbeobjekten.
       </p>
       <div>
+        <div class="hero-qng-badge">
+          <img src="images/qng-logo.avif" alt="QNG Zertifizierung" class="hero-qng-img">
+          <span class="hero-qng-label">QNG-zertifiziert</span>
+        </div>
         <div class="hero-actions">
           <a href="kontakt.html" class="btn-gold">Beratung anfragen</a>
           <a href="fertighaeuser.html" class="btn-ghost">Häuser entdecken</a>
